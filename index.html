@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="TaskManagerApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>{{appTitle}}</title>
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -16,21 +16,23 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Task Manager</span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
-                 <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Tasks</span></a> 
-                 <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Calendar</span></a> 
-                 <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span></a> 
+            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">{{appTitle}}</span> </a>
+                <div class="nav_list"> 
+                    <div ng-show="!loggedIn">
+                        <!--Regisztráció, Belépés-->
+                    </div>
+                    <div ng-show="loggedinIn">
+                        <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
+                        <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Tasks</span></a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Calendar</span></a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span></a> 
+                    </div>
                 </div>
             </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
-    <!--Container Main start-->
-    <div class="height-100 bg-light">
-    
-    </div>
 
-
+    <main ng-view></main>
 
     <script src="Assets/js/angular.min.js"></script>
     <script src="Assets/js/bootstrap.bundle.min.js"></script>
