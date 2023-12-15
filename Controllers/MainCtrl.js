@@ -1,4 +1,4 @@
-app.controller("mainCtrl", ($scope) => {
+app.controller("mainCtrl", function($scope) {
     const showNavbar = (toggleId, navId, bodyId, headerId) =>{
         const toggle = document.getElementById(toggleId),
         nav = document.getElementById(navId),
@@ -27,7 +27,3 @@ app.controller("mainCtrl", ($scope) => {
     }
     linkColor.forEach(l=> l.addEventListener('click', colorLink))
 })
-
-/*document.addEventListener("DOMContentLoaded", (event) => {
-  
-    });*/

@@ -20,7 +20,8 @@
             <div> <a href="#" class="nav_logo"> <i class="bi bi-substack"></i> <span class="nav_logo-name">{{appTitle}}</span> </a>
                 <div class="nav_list"> 
                     <div ng-show="!loggedIn">
-                        <!--Regisztráció, Belépés-->
+                        <a href="#" class="nav_link"> <i class="bi bi-person-plus"></i> <span class="nav_name">Register</span> </a>
+                        <a href="#" class="nav_link active"> <i class="bi bi-key"></i> <span class="nav_name">Login</span> </a>
                     </div>
                     <div ng-show="loggedinIn">
                         <a href="#" class="nav_link active"> <i class="bi bi-speedometer2"></i> <span class="nav_name">Dashboard</span> </a>
@@ -29,7 +30,7 @@
                         <a href="#" class="nav_link"><i class="bi bi-bar-chart-fill"></i> <span class="nav_name">Stats</span></a> 
                     </div>
                 </div>
-            </div> <a href="#" class="nav_link"> <i class="bi bi-box-arrow-left"></i> <span class="nav_name">SignOut</span> </a>
+            </div> <a ng-show="loggedinIn" href="#" class="nav_link"> <i class="bi bi-box-arrow-left"></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
 
@@ -44,6 +45,6 @@
     <script src="Assets/js/app.js"></script>
 
     <script src="Controllers/mainCtrl.js"></script>
-
+    <script src="Controllers/authCtrl.js"></script>
 </body>
 </html>
