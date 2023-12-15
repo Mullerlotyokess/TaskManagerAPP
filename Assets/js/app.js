@@ -19,6 +19,9 @@ app.run(($rootScope) => {
 
 app.config(($routeProvider) => {
     $routeProvider
+        .when('/main', {
+            templateUrl: 'Views/main.html'
+        })
         .when('/login', {
             templateUrl: 'Views/login.html',
             controller: 'authCtrl',
@@ -27,9 +30,13 @@ app.config(($routeProvider) => {
             templateUrl: 'Views/register.html',
             controller: 'authCtrl'
         })
+        .when('/dashboard', {
+            templateUrl: 'Views/dashboard.html',
+            controller: 'Views/dashboardCtrl'
+        })
         .when('/tasks', {
             templateUrl: 'Views/tasks.html',
-            controller: 'taskCtrl',
+            controller: 'tasksCtrl',
         })
         .when('/calendar', {
             templateUrl: 'Views/calendar.html',
@@ -37,10 +44,10 @@ app.config(($routeProvider) => {
         })
         .when('/statistics', {
             templateUrl: 'Views/stats.html',
-            controller: 'statCtrl',
+            controller: 'statsCtrl',
         })
         .otherwise({
-            redirectTo: 'Views/main.html'
+            redirectTo: '/main'
         });
 }
 );
