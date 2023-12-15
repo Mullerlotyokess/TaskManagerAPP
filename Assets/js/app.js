@@ -1,6 +1,6 @@
 var app = angular.module('TaskManagerApp', ['ngRoute']);
 
-app.run(function($rootScope) {
+app.run(($rootScope) => {
     $rootScope.loggedIn = false;
     $rootScope.appTitle = "Task Manager";
 
@@ -17,7 +17,7 @@ app.run(function($rootScope) {
     }
 });
 
-app.config(function($routeProvider) {
+app.config(($routeProvider) => {
     $routeProvider
         .when('/login', {
             templateUrl: 'Views/login.html',
