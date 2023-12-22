@@ -6,6 +6,7 @@
 html {
     font-family: defaultfont;
     font-size: 130%;
+    background-color: var(--white-color);
 }
 
 :root {
